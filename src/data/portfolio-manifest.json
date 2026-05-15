@@ -1,0 +1,354 @@
+{
+  "packaging": {
+    "cover": {
+      "src": "/home/chennuo/Resume/new-materials/包装设计/包装设计/封面/洗发水育发液效果.jpg",
+      "path": "/images/portfolio/packaging/cover.jpg",
+      "width": 3000,
+      "height": 2008
+    },
+    "main": [
+      {
+        "src": "/home/chennuo/Resume/new-materials/包装设计/包装设计/封面/洗发水育发液效果.jpg",
+        "path": "/images/portfolio/packaging/main/01-product-effect.jpg",
+        "width": 3000,
+        "height": 2008
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/包装设计/包装设计/手提袋.jpg",
+        "path": "/images/portfolio/packaging/main/02-bag-layout.jpg",
+        "width": 9449,
+        "height": 7087
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/包装设计/包装设计/手提袋效果.jpg",
+        "path": "/images/portfolio/packaging/main/03-bag-mockup.jpg",
+        "width": 3500,
+        "height": 2500
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/包装设计/包装设计/洗发水育发液盒子效果.jpg",
+        "path": "/images/portfolio/packaging/main/04-box-mockup.jpg",
+        "width": 5000,
+        "height": 3500
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/包装设计/包装设计/洗发露包装展开.jpg",
+        "path": "/images/portfolio/packaging/main/05-shampoo-layout.jpg",
+        "width": 5906,
+        "height": 4134
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/包装设计/包装设计/盒子效果.jpg",
+        "path": "/images/portfolio/packaging/main/06-box-effect.jpg",
+        "width": 3000,
+        "height": 2008
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/包装设计/包装设计/礼盒顶.jpg",
+        "path": "/images/portfolio/packaging/main/07-giftbox-top.jpg",
+        "width": 5906,
+        "height": 4724
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/包装设计/包装设计/礼盒底.jpg",
+        "path": "/images/portfolio/packaging/main/08-giftbox-bottom.jpg",
+        "width": 5906,
+        "height": 4724
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/包装设计/包装设计/育发液包装展开.jpg",
+        "path": "/images/portfolio/packaging/main/09-tonic-layout.jpg",
+        "width": 3544,
+        "height": 2954
+      }
+    ],
+    "others": [
+      {
+        "src": "/home/chennuo/Resume/new-materials/包装设计/包装设计/其他作品/烟盒.jpg",
+        "path": "/images/portfolio/packaging/others/01-烟盒.jpg",
+        "width": 1192,
+        "height": 843
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/包装设计/包装设计/其他作品/烟盒样机.jpg",
+        "path": "/images/portfolio/packaging/others/02-烟盒样机.jpg",
+        "width": 3500,
+        "height": 2300
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/包装设计/包装设计/其他作品/药品临摹样机.jpg",
+        "path": "/images/portfolio/packaging/others/03-药品临摹样机.jpg",
+        "width": 2200,
+        "height": 1540
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/包装设计/包装设计/其他作品/药盒临摹彩色平面图.jpg",
+        "path": "/images/portfolio/packaging/others/04-药盒临摹彩色平面图.jpg",
+        "width": 842,
+        "height": 595
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/包装设计/包装设计/其他作品/藕粉彩色平面图.jpg",
+        "path": "/images/portfolio/packaging/others/05-藕粉彩色平面图.jpg",
+        "width": 1774,
+        "height": 1527
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/包装设计/包装设计/其他作品/藕粉样机.jpg",
+        "path": "/images/portfolio/packaging/others/06-藕粉样机.jpg",
+        "width": 4000,
+        "height": 2670
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/包装设计/包装设计/其他作品/鲜花饼 样机.jpg",
+        "path": "/images/portfolio/packaging/others/07-鲜花饼 样机.jpg",
+        "width": 1024,
+        "height": 1369
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/包装设计/包装设计/其他作品/鲜花饼彩色平面图.jpg",
+        "path": "/images/portfolio/packaging/others/08-鲜花饼彩色平面图.jpg",
+        "width": 2083,
+        "height": 1499
+      }
+    ]
+  },
+  "poster": {
+    "cover": {
+      "src": "/home/chennuo/Resume/new-materials/海报设计/海报设计/封面/垃圾分类.jpg",
+      "path": "/images/portfolio/poster/cover.jpg",
+      "width": 3508,
+      "height": 4961
+    },
+    "main": [
+      {
+        "src": "/home/chennuo/Resume/new-materials/海报设计/海报设计/封面/垃圾分类.jpg",
+        "path": "/images/portfolio/poster/main/01-垃圾分类.jpg",
+        "width": 3508,
+        "height": 4961
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/海报设计/海报设计/打扫卫生.jpg",
+        "path": "/images/portfolio/poster/main/02-打扫卫生.jpg",
+        "width": 3508,
+        "height": 4961
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/海报设计/海报设计/捡垃圾.jpg",
+        "path": "/images/portfolio/poster/main/03-捡垃圾.jpg",
+        "width": 3508,
+        "height": 4961
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/海报设计/海报设计/看书.jpg",
+        "path": "/images/portfolio/poster/main/04-看书.jpg",
+        "width": 3508,
+        "height": 4961
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/海报设计/海报设计/车让人.jpg",
+        "path": "/images/portfolio/poster/main/05-车让人.jpg",
+        "width": 3508,
+        "height": 4961
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/海报设计/海报设计/过马路.jpg",
+        "path": "/images/portfolio/poster/main/06-过马路.jpg",
+        "width": 3508,
+        "height": 4961
+      }
+    ],
+    "others": [
+      {
+        "src": "/home/chennuo/Resume/new-materials/海报设计/海报设计/其他作品/低碳.jpg",
+        "path": "/images/portfolio/poster/others/01-低碳.jpg",
+        "width": 648,
+        "height": 972
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/海报设计/海报设计/其他作品/古风少女.jpg",
+        "path": "/images/portfolio/poster/others/02-古风少女.jpg",
+        "width": 2481,
+        "height": 3508
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/海报设计/海报设计/其他作品/名片效果图（ai）.jpg",
+        "path": "/images/portfolio/poster/others/03-名片效果图（ai）.jpg",
+        "width": 3508,
+        "height": 2480
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/海报设计/海报设计/其他作品/名片效果图（ps).jpg",
+        "path": "/images/portfolio/poster/others/04-名片效果图（ps).jpg",
+        "width": 3508,
+        "height": 2480
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/海报设计/海报设计/其他作品/咖啡.jpg",
+        "path": "/images/portfolio/poster/others/05-咖啡.jpg",
+        "width": 3508,
+        "height": 4961
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/海报设计/海报设计/其他作品/提前十分钟.jpg",
+        "path": "/images/portfolio/poster/others/06-提前十分钟.jpg",
+        "width": 648,
+        "height": 972
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/海报设计/海报设计/其他作品/演唱会.jpg",
+        "path": "/images/portfolio/poster/others/07-演唱会.jpg",
+        "width": 3508,
+        "height": 4961
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/海报设计/海报设计/其他作品/特产.jpg",
+        "path": "/images/portfolio/poster/others/08-特产.jpg",
+        "width": 648,
+        "height": 972
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/海报设计/海报设计/其他作品/精神粮食.jpg",
+        "path": "/images/portfolio/poster/others/09-精神粮食.jpg",
+        "width": 648,
+        "height": 972
+      }
+    ]
+  },
+  "book": {
+    "cover": {
+      "src": "/home/chennuo/Resume/new-materials/书籍设计/书籍设计/封底封面.jpg",
+      "path": "/images/portfolio/book/cover.jpg",
+      "width": 5906,
+      "height": 4169
+    },
+    "main": [
+      {
+        "src": "/home/chennuo/Resume/new-materials/书籍设计/书籍设计/封底封面.jpg",
+        "path": "/images/portfolio/book/main/01-封底封面.jpg",
+        "width": 5906,
+        "height": 4169
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/书籍设计/书籍设计/4 5.jpg",
+        "path": "/images/portfolio/book/main/02-4-5.jpg",
+        "width": 5906,
+        "height": 4169
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/书籍设计/书籍设计/8 9.jpg",
+        "path": "/images/portfolio/book/main/03-8-9.jpg",
+        "width": 5906,
+        "height": 4169
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/书籍设计/书籍设计/12 13.jpg",
+        "path": "/images/portfolio/book/main/04-12-13.jpg",
+        "width": 5906,
+        "height": 4169
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/书籍设计/书籍设计/14 15.jpg",
+        "path": "/images/portfolio/book/main/05-14-15.jpg",
+        "width": 5906,
+        "height": 4169
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/书籍设计/书籍设计/16 17.jpg",
+        "path": "/images/portfolio/book/main/06-16-17.jpg",
+        "width": 5906,
+        "height": 4169
+      }
+    ]
+  },
+  "cultural": {
+    "cover": {
+      "src": "/home/chennuo/Resume/new-materials/文创设计/文创设计/封面/be8910c2f59ae8f5af614850d1640a8d.jpg",
+      "path": "/images/portfolio/cultural/cover.jpg",
+      "width": 2304,
+      "height": 3108
+    },
+    "main": [
+      {
+        "src": "/home/chennuo/Resume/new-materials/文创设计/文创设计/4d2a0a8e9699be47243e44a20a9c3fe5.jpg",
+        "path": "/images/portfolio/cultural/main/01-4d2a0a8e9699be47243e44a20a9c3fe5.jpg",
+        "width": 1125,
+        "height": 750
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/文创设计/文创设计/7f1f72942effe74c4cc5059e3a8fe273.jpg",
+        "path": "/images/portfolio/cultural/main/02-7f1f72942effe74c4cc5059e3a8fe273.jpg",
+        "width": 1920,
+        "height": 1279
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/文创设计/文创设计/a0e78243dd19aaab0a0252a842573380.jpg",
+        "path": "/images/portfolio/cultural/main/03-a0e78243dd19aaab0a0252a842573380.jpg",
+        "width": 1920,
+        "height": 1279
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/文创设计/文创设计/b4321d438e374393375f3d6e8179841e.jpg",
+        "path": "/images/portfolio/cultural/main/04-b4321d438e374393375f3d6e8179841e.jpg",
+        "width": 1600,
+        "height": 2133
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/文创设计/文创设计/e2da22d1849ead88f9ca234b76fa790f.jpg",
+        "path": "/images/portfolio/cultural/main/05-e2da22d1849ead88f9ca234b76fa790f.jpg",
+        "width": 1920,
+        "height": 1279
+      }
+    ],
+    "sketches": [
+      {
+        "src": "/home/chennuo/Resume/new-materials/文创设计/文创设计/设计图稿/0ce62e2df5c4efd7bf9dca1411dfac8e.jpg",
+        "path": "/images/portfolio/cultural/sketches/01-0ce62e2df5c4efd7bf9dca1411dfac8e.jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/文创设计/文创设计/设计图稿/34bda25658f804def79e1e5a1685ee71.jpg",
+        "path": "/images/portfolio/cultural/sketches/02-34bda25658f804def79e1e5a1685ee71.jpg",
+        "width": 1181,
+        "height": 1654
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/文创设计/文创设计/设计图稿/562e36e1c934362e60b980b259288683.jpg",
+        "path": "/images/portfolio/cultural/sketches/03-562e36e1c934362e60b980b259288683.jpg",
+        "width": 4868,
+        "height": 4868
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/文创设计/文创设计/设计图稿/76158858f965e112b2766776e3e44ad0.jpg",
+        "path": "/images/portfolio/cultural/sketches/04-76158858f965e112b2766776e3e44ad0.jpg",
+        "width": 1724,
+        "height": 1134
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/文创设计/文创设计/设计图稿/8684a05fddea0d641f7d86f8d916a23f.jpg",
+        "path": "/images/portfolio/cultural/sketches/05-8684a05fddea0d641f7d86f8d916a23f.jpg",
+        "width": 1724,
+        "height": 1134
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/文创设计/文创设计/设计图稿/948ea1b2f1f7cbae422a2a584d5f59c8.jpg",
+        "path": "/images/portfolio/cultural/sketches/06-948ea1b2f1f7cbae422a2a584d5f59c8.jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/文创设计/文创设计/设计图稿/9ab098dc814928b48971b6a5f20edd21.jpg",
+        "path": "/images/portfolio/cultural/sketches/07-9ab098dc814928b48971b6a5f20edd21.jpg",
+        "width": 1724,
+        "height": 1134
+      },
+      {
+        "src": "/home/chennuo/Resume/new-materials/文创设计/文创设计/设计图稿/a1868f83855b1ada9be4e798c50cecc2.jpg",
+        "path": "/images/portfolio/cultural/sketches/08-a1868f83855b1ada9be4e798c50cecc2.jpg",
+        "width": 1080,
+        "height": 1080
+      }
+    ]
+  }
+}

@@ -1,0 +1,196 @@
+---
+import { portfolioSections, getSection } from '../../data/portfolio';
+
+export function getStaticPaths() {
+  return portfolioSections.map((section) => ({ params: { id: section.id } }));
+}
+
+const section = getSection(Astro.params.id!);
+if (!section) {
+  return Astro.redirect('/');
+}
+const next = portfolioSections[(portfolioSections.findIndex((item) => item.id === section.id) + 1) % portfolioSections.length];
+const isPoster = section.id === 'poster';
+const isBook = section.id === 'book';
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={`${section.title} - 普锦湘个人作品集`} />
+    <title>{section.title} | 普锦湘作品集</title>
+  </head>
+  <body style={`--accent:${section.accent}`}>
+    <header class="detail-header glass">
+      <a href="/">← 返回首页</a>
+      <span>{section.order} / {section.english}</span>
+      <a href={next.route}>下一板块 →</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">{section.english}</p>
+          <h1><span>{section.order}</span>{section.title}</h1>
+          <p>{section.intro}</p>
+          <div class="tags">
+            {section.tags.map((tag) => <em>{tag}</em>)}
+          </div>
+        </div>
+        <button class="hero-cover" data-lightbox={section.cover} data-title={`${section.title}封面`}>
+          <img src={section.cover} alt={`${section.title}封面`} />
+        </button>
+      </section>
+
+      <section class="statement glass">
+        <div>
+          <p class="eyebrow">DESIGN STATEMENT</p>
+          <h2>设计说明</h2>
+        </div>
+        <p>{section.concept}</p>
+      </section>
+
+      <section class="gallery-block">
+        <div class="block-heading">
+          <p class="eyebrow">MAIN PROJECT</p>
+          <h2>{section.mainTitle}</h2>
+          <p>{section.mainDescription}</p>
+        </div>
+        <div class:list={['gallery', isPoster && 'poster-gallery', isBook && 'book-gallery']}>
+          {section.mainImages.map((image, index) => (
+            <button class:list={['gallery-item', index === 0 && 'featured']} data-lightbox={image.src} data-title={image.caption ?? image.alt}>
+              <img src={image.src} alt={image.alt} loading={index < 2 ? 'eager' : 'lazy'} />
+              <span>{image.caption}</span>
+            </button>
+          ))}
+        </div>
+      </section>
+
+      {section.secondaryImages && section.secondaryImages.length > 0 && (
+        <section class="gallery-block secondary">
+          <div class="block-heading compact">
+            <p class="eyebrow">MORE WORKS</p>
+            <h2>{section.secondaryTitle}</h2>
+            <p>{section.secondaryDescription}</p>
+          </div>
+          <div class="gallery small-gallery">
+            {section.secondaryImages.map((image) => (
+              <button class="gallery-item" data-lightbox={image.src} data-title={image.caption ?? image.alt}>
+                <img src={image.src} alt={image.alt} loading="lazy" />
+                <span>{image.caption}</span>
+              </button>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <section class="process glass">
+        <p class="eyebrow">KEY POINTS</p>
+        <h2>设计要点</h2>
+        <div>
+          {section.details.map((detail, index) => (
+            <article>
+              <b>{String(index + 1).padStart(2, '0')}</b>
+              <p>{detail}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="next-panel">
+        <a href={next.route}>
+          <span>NEXT PROJECT</span>
+          <strong>{next.order} {next.title}</strong>
+          <img src={next.cover} alt={`${next.title}封面`} loading="lazy" />
+        </a>
+      </section>
+    </main>
+
+    <div class="lightbox" aria-hidden="true">
+      <button class="lightbox-close" aria-label="关闭">×</button>
+      <img alt="作品大图" />
+      <p></p>
+    </div>
+
+    <script>
+      const lightbox = document.querySelector('.lightbox');
+      const lightboxImg = lightbox?.querySelector('img');
+      const lightboxText = lightbox?.querySelector('p');
+      const close = () => lightbox?.setAttribute('aria-hidden', 'true');
+      document.querySelectorAll('[data-lightbox]').forEach((button) => {
+        button.addEventListener('click', () => {
+          const src = button.getAttribute('data-lightbox');
+          const title = button.getAttribute('data-title') || '';
+          if (lightboxImg && src) lightboxImg.src = src;
+          if (lightboxText) lightboxText.textContent = title;
+          lightbox?.setAttribute('aria-hidden', 'false');
+        });
+      });
+      lightbox?.addEventListener('click', (event) => {
+        if (event.target === lightbox) close();
+      });
+      document.querySelector('.lightbox-close')?.addEventListener('click', close);
+      window.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') close();
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  :root { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Microsoft YaHei", sans-serif; color: #111; background: #f8f5ef; scroll-behavior: smooth; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; background: radial-gradient(circle at 12% 8%, rgba(255,255,255,.95), transparent 24rem), radial-gradient(circle at 86% 10%, color-mix(in srgb, var(--accent), transparent 76%), transparent 28rem), linear-gradient(135deg,#fbfaf6,#f1ece4 46%,#fff); }
+  a { color: inherit; text-decoration: none; }
+  img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  button { font: inherit; }
+  main { width: min(1180px, calc(100% - 36px)); margin: 0 auto; }
+  .glass { border: 1px solid rgba(255,255,255,.72); background: rgba(255,255,255,.62); backdrop-filter: blur(24px) saturate(145%); box-shadow: 0 24px 80px rgba(80,60,30,.12), inset 0 1px 0 rgba(255,255,255,.74); }
+  .detail-header { position: sticky; top: 18px; z-index: 20; width: min(1180px, calc(100% - 36px)); margin: 18px auto 0; padding: 14px 18px; border-radius: 999px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: 900; }
+  .detail-header span { color: var(--accent); letter-spacing: .12em; }
+  .hero { min-height: 78vh; padding: 80px 0 50px; display: grid; grid-template-columns: .86fr 1.14fr; gap: 42px; align-items: center; }
+  .eyebrow { margin: 0 0 14px; color: var(--accent); font-size: 12px; letter-spacing: .18em; font-weight: 950; text-transform: uppercase; }
+  h1, h2, p { margin-top: 0; }
+  h1 { margin-bottom: 28px; font-size: clamp(64px, 11vw, 144px); line-height: .85; letter-spacing: -.08em; }
+  h1 span { display: block; color: var(--accent); font-size: .34em; letter-spacing: -.02em; }
+  .hero-copy > p:not(.eyebrow) { color: #555; font-size: 19px; line-height: 1.9; }
+  .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 26px; }
+  .tags em { font-style: normal; padding: 9px 12px; border-radius: 999px; background: #111; color: white; font-size: 12px; font-weight: 850; }
+  .hero-cover { border: 0; padding: 0; cursor: zoom-in; height: 620px; border-radius: 42px; overflow: hidden; box-shadow: 0 35px 100px rgba(0,0,0,.18); background: #eee; }
+  .statement { border-radius: 38px; padding: 42px; display: grid; grid-template-columns: .7fr 1.3fr; gap: 34px; margin-bottom: 86px; }
+  .statement h2, .block-heading h2, .process h2 { font-size: clamp(42px, 7vw, 86px); margin: 0; line-height: .95; letter-spacing: -.06em; }
+  .statement p:last-child, .block-heading p { color: #555; line-height: 1.9; font-size: 17px; }
+  .gallery-block { padding: 30px 0 82px; }
+  .block-heading { max-width: 760px; margin-bottom: 28px; }
+  .block-heading.compact { max-width: 840px; }
+  .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .gallery-item { position: relative; border: 0; padding: 0; min-height: 340px; border-radius: 30px; overflow: hidden; background: white; cursor: zoom-in; box-shadow: 0 18px 54px rgba(0,0,0,.12); }
+  .gallery-item.featured { grid-column: span 2; min-height: 500px; }
+  .poster-gallery { grid-template-columns: repeat(3, 1fr); }
+  .poster-gallery .gallery-item { min-height: 520px; }
+  .poster-gallery .featured { grid-column: span 1; }
+  .book-gallery .gallery-item { grid-column: span 3; min-height: 620px; }
+  .small-gallery { grid-template-columns: repeat(4, 1fr); }
+  .small-gallery .gallery-item { min-height: 270px; }
+  .gallery-item span { position: absolute; left: 14px; right: 14px; bottom: 14px; padding: 10px 12px; border-radius: 999px; background: rgba(0,0,0,.58); backdrop-filter: blur(12px); color: white; font-size: 12px; font-weight: 800; }
+  .process { border-radius: 38px; padding: 44px; margin-bottom: 76px; }
+  .process > div { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
+  .process article { padding: 24px; border-radius: 24px; background: rgba(255,255,255,.7); }
+  .process b { color: var(--accent); font-size: 28px; }
+  .process p { color: #555; line-height: 1.8; margin: 12px 0 0; }
+  .next-panel { padding: 0 0 90px; }
+  .next-panel a { position: relative; min-height: 300px; border-radius: 42px; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 34px; color: white; background: #111; }
+  .next-panel img { position: absolute; inset: 0; opacity: .46; z-index: 0; }
+  .next-panel span, .next-panel strong { position: relative; z-index: 1; }
+  .next-panel span { letter-spacing: .18em; font-size: 12px; font-weight: 900; }
+  .next-panel strong { font-size: clamp(40px, 8vw, 92px); letter-spacing: -.07em; }
+  .lightbox { position: fixed; inset: 0; z-index: 100; display: none; place-items: center; padding: 30px; background: rgba(10,10,10,.82); backdrop-filter: blur(20px); }
+  .lightbox[aria-hidden="false"] { display: grid; }
+  .lightbox img { width: auto; height: auto; max-width: min(1120px, 94vw); max-height: 82vh; object-fit: contain; border-radius: 18px; box-shadow: 0 30px 100px rgba(0,0,0,.45); }
+  .lightbox p { color: white; margin-top: 14px; }
+  .lightbox-close { position: fixed; top: 24px; right: 28px; width: 44px; height: 44px; border-radius: 50%; border: 0; background: white; font-size: 28px; cursor: pointer; }
+  @media (max-width: 960px) { .hero, .statement { grid-template-columns: 1fr; } .gallery, .small-gallery, .poster-gallery { grid-template-columns: repeat(2,1fr); } .gallery-item.featured, .book-gallery .gallery-item { grid-column: span 2; } .process > div { grid-template-columns: 1fr; } }
+  @media (max-width: 640px) { .detail-header { gap: 10px; font-size: 12px; } .hero-cover { height: 420px; } h1 { font-size: 70px; } .gallery, .small-gallery, .poster-gallery { grid-template-columns: 1fr; } .gallery-item, .poster-gallery .gallery-item, .gallery-item.featured, .book-gallery .gallery-item { grid-column: span 1; min-height: 380px; } .statement, .process { padding: 28px; } }
+</style>
