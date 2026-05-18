@@ -12,6 +12,7 @@ if (!section) {
 const next = portfolioSections[(portfolioSections.findIndex((item) => item.id === section.id) + 1) % portfolioSections.length];
 const isPoster = section.id === 'poster';
 const isBook = section.id === 'book';
+const isPackaging = section.id === 'packaging';
 ---
 
 <!doctype html>
@@ -58,7 +59,7 @@ const isBook = section.id === 'book';
           <h2>{section.mainTitle}</h2>
           <p>{section.mainDescription}</p>
         </div>
-        <div class:list={['gallery', isPoster && 'poster-gallery', isBook && 'book-gallery']}>
+        <div class:list={['gallery', isPoster && 'poster-gallery', isBook && 'book-gallery', isPackaging && 'packaging-gallery']}>
           {section.mainImages.map((image, index) => (
             <button class:list={['gallery-item', index === 0 && 'featured']} data-lightbox={image.src} data-title={image.caption ?? image.alt}>
               <img src={image.src} alt={image.alt} loading={index < 2 ? 'eager' : 'lazy'} />
@@ -75,7 +76,7 @@ const isBook = section.id === 'book';
             <h2>{section.secondaryTitle}</h2>
             <p>{section.secondaryDescription}</p>
           </div>
-          <div class="gallery small-gallery">
+          <div class:list={['gallery', 'small-gallery', isPoster && 'poster-gallery', isBook && 'book-gallery']}>
             {section.secondaryImages.map((image) => (
               <button class="gallery-item" data-lightbox={image.src} data-title={image.caption ?? image.alt}>
                 <img src={image.src} alt={image.alt} loading="lazy" />
@@ -165,16 +166,25 @@ const isBook = section.id === 'book';
   .gallery-block { padding: 30px 0 82px; }
   .block-heading { max-width: 760px; margin-bottom: 28px; }
   .block-heading.compact { max-width: 840px; }
-  .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .gallery-item { position: relative; border: 0; padding: 0; min-height: 340px; border-radius: 30px; overflow: hidden; background: white; cursor: zoom-in; box-shadow: 0 18px 54px rgba(0,0,0,.12); }
-  .gallery-item.featured { grid-column: span 2; min-height: 500px; }
-  .poster-gallery { grid-template-columns: repeat(3, 1fr); }
-  .poster-gallery .gallery-item { min-height: 520px; }
+  .gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; align-items: start; }
+  .gallery-item { position: relative; border: 0; padding: 14px; min-height: 420px; border-radius: 34px; overflow: hidden; background: rgba(255,255,255,.72); cursor: zoom-in; box-shadow: 0 18px 54px rgba(0,0,0,.1); }
+  .gallery-item img { height: calc(100% - 44px); min-height: 340px; object-fit: contain; border-radius: 24px; background: #f7f4ee; }
+  .gallery-item.featured { grid-column: span 2; min-height: 610px; }
+  .gallery-item.featured img { min-height: 530px; }
+  .packaging-gallery .gallery-item:not(.featured) { min-height: 430px; }
+  .poster-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .poster-gallery .gallery-item { min-height: 640px; }
+  .poster-gallery .gallery-item img { min-height: 560px; }
   .poster-gallery .featured { grid-column: span 1; }
-  .book-gallery .gallery-item { grid-column: span 3; min-height: 620px; }
-  .small-gallery { grid-template-columns: repeat(4, 1fr); }
-  .small-gallery .gallery-item { min-height: 270px; }
-  .gallery-item span { position: absolute; left: 14px; right: 14px; bottom: 14px; padding: 10px 12px; border-radius: 999px; background: rgba(0,0,0,.58); backdrop-filter: blur(12px); color: white; font-size: 12px; font-weight: 800; }
+  .book-gallery .gallery-item { grid-column: span 2; min-height: 540px; }
+  .book-gallery .gallery-item img { min-height: 460px; }
+  .small-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .small-gallery .gallery-item { min-height: 360px; }
+  .small-gallery .gallery-item img { min-height: 280px; }
+  .poster-gallery.small-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .poster-gallery.small-gallery .gallery-item { min-height: 560px; }
+  .poster-gallery.small-gallery .gallery-item img { min-height: 480px; }
+  .gallery-item span { display: flex; align-items: center; justify-content: center; min-height: 34px; margin-top: 10px; padding: 8px 12px; border-radius: 999px; background: #111; color: white; font-size: 12px; font-weight: 850; }
   .process { border-radius: 38px; padding: 44px; margin-bottom: 76px; }
   .process > div { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
   .process article { padding: 24px; border-radius: 24px; background: rgba(255,255,255,.7); }
@@ -191,6 +201,6 @@ const isBook = section.id === 'book';
   .lightbox img { width: auto; height: auto; max-width: min(1120px, 94vw); max-height: 82vh; object-fit: contain; border-radius: 18px; box-shadow: 0 30px 100px rgba(0,0,0,.45); }
   .lightbox p { color: white; margin-top: 14px; }
   .lightbox-close { position: fixed; top: 24px; right: 28px; width: 44px; height: 44px; border-radius: 50%; border: 0; background: white; font-size: 28px; cursor: pointer; }
-  @media (max-width: 960px) { .hero, .statement { grid-template-columns: 1fr; } .gallery, .small-gallery, .poster-gallery { grid-template-columns: repeat(2,1fr); } .gallery-item.featured, .book-gallery .gallery-item { grid-column: span 2; } .process > div { grid-template-columns: 1fr; } }
-  @media (max-width: 640px) { .detail-header { gap: 10px; font-size: 12px; } .hero-cover { height: 420px; } h1 { font-size: 70px; } .gallery, .small-gallery, .poster-gallery { grid-template-columns: 1fr; } .gallery-item, .poster-gallery .gallery-item, .gallery-item.featured, .book-gallery .gallery-item { grid-column: span 1; min-height: 380px; } .statement, .process { padding: 28px; } }
+  @media (max-width: 960px) { .hero, .statement { grid-template-columns: 1fr; } .gallery, .small-gallery, .poster-gallery, .poster-gallery.small-gallery { grid-template-columns: repeat(2,1fr); } .gallery-item.featured, .book-gallery .gallery-item { grid-column: span 2; } .process > div { grid-template-columns: 1fr; } }
+  @media (max-width: 640px) { .detail-header { gap: 10px; font-size: 12px; } .hero-cover { height: 420px; } h1 { font-size: 70px; } .gallery, .small-gallery, .poster-gallery, .poster-gallery.small-gallery { grid-template-columns: 1fr; } .gallery-item, .poster-gallery .gallery-item, .gallery-item.featured, .book-gallery .gallery-item { grid-column: span 1; min-height: 380px; } .gallery-item img, .poster-gallery .gallery-item img, .gallery-item.featured img, .book-gallery .gallery-item img { min-height: 300px; } .statement, .process { padding: 28px; } }
 </style>
